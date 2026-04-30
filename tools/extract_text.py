@@ -1761,7 +1761,7 @@ class MessageDecoderJPN(MessageDecoder):
 
     def decode_char(self, c):
         assert c not in range(0x8440, 0x847F), "Hylian codepage unimplemented"
-        return bytes([c>>8, c &0xFF]).decode("SHIFT-JIS")
+        return bytes([c>>8, c &0xFF]).decode("SHIFT_JIS")
 
     def format_color(self, c):
         c1 = c & 0xF
@@ -1777,6 +1777,32 @@ class MessageDecoderJPN(MessageDecoder):
             6 : "YELLOW",
             7 : "BLACK",
         }[c1]
+
+class MessageDecoderKOR(MessageDecoderJPN):
+    """Korean OoT patch decoder.
+
+    The Korean ROM uses a variable-length encoding inside the JPN message tables:
+    - Bytes 0x01–0x7F are single-byte characters (ASCII / punctuation).
+    - A byte of 0x00 always introduces a 2-byte control code (e.g. 0x000A = NEWLINE).
+    - Bytes 0x81–0xFF are the lead byte of a 2-byte SHIFT_JIS character.
+    """
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.pop_char = self.pop_char_kor
+
+    def pop_char_kor(self) -> int:
+        c = self.pop_byte()
+        if c == 0x00 or c >= 0x81:
+            return (c << 8) | self.pop_byte()
+        # Single-byte ASCII character (0x01–0x7F)
+        return c
+
+    def decode_char(self, c):
+        if c <= 0x7F:
+            return chr(c)
+        assert c not in range(0x8440, 0x847F), "Hylian codepage unimplemented"
+        return bytes([c >> 8, c & 0xFF]).decode("SHIFT_JIS")
 
 class MessageDecoderNES(MessageDecoder):
     def __init__(self) -> None:
@@ -2217,6 +2243,7 @@ def main():
     jpn_decoder = MessageDecoderJPN()
     nes_decoder = MessageDecoderNES()
     chn_decoder = MessageDecoderCHN()
+    kor_decoder = MessageDecoderKOR()
 
     message_tables : List[Optional[MessageTableDesc]] = [None for _ in range(4)] # JP, EN/CN, FR, DE
     message_table_staff : MessageTableDesc = None
@@ -2236,6 +2263,12 @@ def main():
     elif config.text_lang == "CN":
         message_tables[0]   = MessageTableDesc("sJpnMessageEntryTable",   "jpn_message_data_static",   jpn_decoder, None)
         message_tables[1]   = MessageTableDesc("sNesMessageEntryTable",   "nes_message_data_static",   chn_decoder, None)
+        message_tables[2]   = None
+        message_tables[3]   = None
+        message_table_staff = MessageTableDesc("sStaffMessageEntryTable", "staff_message_data_static", nes_decoder, None)
+    elif config.text_lang == "KOR":
+        message_tables[0]   = MessageTableDesc("sJpnMessageEntryTable",   "jpn_message_data_static",   kor_decoder, None)
+        message_tables[1]   = MessageTableDesc("sNesMessageEntryTable",   "nes_message_data_static",   nes_decoder, None)
         message_tables[2]   = None
         message_tables[3]   = None
         message_table_staff = MessageTableDesc("sStaffMessageEntryTable", "staff_message_data_static", nes_decoder, None)

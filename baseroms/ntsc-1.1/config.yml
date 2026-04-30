@@ -2,7 +2,7 @@ checksums:
   - checksum-JP
   - checksum-US
 dmadata_start: 0x7430
-text_lang: NTSC
+text_lang: KOR
 incbins:
   - name: ipl3
     segment: makerom
@@ -10,63 +10,63 @@ incbins:
     size: 0xFC0
   - name: rspbootText
     segment: boot
-    vram: 0x800060B0
+    vram: 0x800060A0
     size: 0x160
   - name: aspMainText
     segment: code
-    vram: 0x800E3180
+    vram: 0x800E31D0
     size: 0xFB0
   - name: gspF3DZEX2_NoN_fifoText
     segment: code
-    vram: 0x800E4130
+    vram: 0x800E4180
     size: 0x1390
   - name: gspS2DEX2d_fifoText
     segment: code
-    vram: 0x800E54C0
+    vram: 0x800E5510
     size: 0x18C0
   - name: njpgdspMainText
     segment: code
-    vram: 0x800E6D80
+    vram: 0x800E6DD0
     size: 0xAF0
   - name: aspMainData
     segment: code
-    vram: 0x801144A0
+    vram: 0x80114520
     size: 0x2E0
   - name: gspF3DZEX2_NoN_fifoData
     segment: code
-    vram: 0x80114780
+    vram: 0x80114800
     size: 0x420
   - name: gspS2DEX2d_fifoData
     segment: code
-    vram: 0x80114BA0
+    vram: 0x80114C20
     size: 0x390
   - name: njpgdspMainData
     segment: code
-    vram: 0x80114F30
+    vram: 0x80114FB0
     size: 0x60
 variables:
-  gIdentityMtx: 0x800FEF70
-  sJpnMessageEntryTable: 0x8010AB0C
-  sNesMessageEntryTable: 0x8010EC4C
-  sStaffMessageEntryTable: 0x80112E6C
-  gSoundFontTable: 0x80113900
-  gSequenceFontTable: 0x80113B70
-  gSequenceTable: 0x80113D30
-  gSampleBankTable: 0x80114420
-  sShadowTex: 0x80AE0C80
+  gIdentityMtx: 0x800FEFF0
+  sJpnMessageEntryTable: 0x8010AB8C
+  sNesMessageEntryTable: 0x8010ECCC
+  sStaffMessageEntryTable: 0x80112EEC
+  gSoundFontTable: 0x80113980
+  gSequenceFontTable: 0x80113BF0
+  gSequenceTable: 0x80113DB0
+  gSampleBankTable: 0x801144A0
+  sShadowTex: 0x80AE0C70
 assets:
 - name: code/fbdemo_circle
   xml_path: assets/xml/code/fbdemo_circle.xml
-  start_offset: 0xEC268
-  end_offset: 0xED558
+  start_offset: 0xEC2E8
+  end_offset: 0xED5D8
 - name: code/fbdemo_triforce
   xml_path: assets/xml/code/fbdemo_triforce.xml
-  start_offset: 0xEB6F0
-  end_offset: 0xEB7C0
+  start_offset: 0xEB770
+  end_offset: 0xEB840
 - name: code/fbdemo_wipe1
   xml_path: assets/xml/code/fbdemo_wipe1.xml
-  start_offset: 0xEB7C0
-  end_offset: 0xEC248
+  start_offset: 0xEB840
+  end_offset: 0xEC2C8
 - name: n64dd/error_textures
   xml_path: assets/xml/n64dd/error_textures.xml
   start_offset: 0xC140
@@ -931,8 +931,8 @@ assets:
   end_offset: 0x4098
 - name: overlays/ovl_file_choose
   xml_path: assets/xml/overlays/ovl_file_choose.xml
-  start_offset: 0xEC50
-  end_offset: 0xF330
+  start_offset: 0xEC60
+  end_offset: 0xF340
 - name: overlays/ovl_Magic_Dark
   xml_path: assets/xml/overlays/ovl_Magic_Dark.xml
   start_offset: 0xC90

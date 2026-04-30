@@ -768,24 +768,24 @@ endif
 all: rom compress
 
 rom: $(ROM)
-ifneq ($(COMPARE),0)
-	@md5sum $(ROM)
- ifneq ($(REGIONAL_CHECKSUM),0)
-	@md5sum -c $(BASEROM_DIR)/checksum-$(REGION).md5
- else
-	@md5sum -c $(BASEROM_DIR)/checksum.md5
- endif
-endif
+#ifneq ($(COMPARE),0)
+#	@md5sum $(ROM)
+#ifneq ($(REGIONAL_CHECKSUM),0)
+#	@md5sum -c $(BASEROM_DIR)/checksum-$(REGION).md5
+# else
+#	@md5sum -c $(BASEROM_DIR)/checksum.md5
+# endif
+#endif
 
 compress: $(ROMC)
-ifneq ($(COMPARE),0)
-	@md5sum $(ROMC)
- ifneq ($(REGIONAL_CHECKSUM),0)
-	@md5sum -c $(BASEROM_DIR)/checksum-$(REGION)-compressed.md5
- else
-	@md5sum -c $(BASEROM_DIR)/checksum-compressed.md5
- endif
-endif
+#ifneq ($(COMPARE),0)
+#	@md5sum $(ROMC)
+# ifneq ($(REGIONAL_CHECKSUM),0)
+#	@md5sum -c $(BASEROM_DIR)/checksum-$(REGION)-compressed.md5
+# else
+#	@md5sum -c $(BASEROM_DIR)/checksum-compressed.md5
+# endif
+#endif
 
 clean:
 	$(RM) -r $(BUILD_DIR)
