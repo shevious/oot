@@ -15,7 +15,7 @@ from pathlib import Path
 
 BASE       = Path(__file__).parent
 CODE_CSV   = BASE / "code.csv"
-INPUT_H    = BASE / "message_data_kor.h"
+INPUT_H    = BASE / "message_data_utf8.h"
 OUTPUT_H   = BASE / "message_data_kanji.h"
 REFERENCE  = BASE / "extracted/ntsc-1.1/text/message_data.h"
 
