@@ -7,7 +7,7 @@
  */
 DEFINE_MESSAGE_FFFC(0xFFFC, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 MSG(
-"０１２３４５６７８９あいうえおかきくけこ\n"
+"０１２３４５６７８９元いうえお滴きくけこ\n"
 "さしすせそたちつてとなにぬねのはひふへほ\n"
 "まみむめもやゆよらりるれろわをんぁぃぅぇ\n"
 "ぉっゃゅょがぎぐげござじずぜぞだぢづでど\n"
