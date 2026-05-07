@@ -1,0 +1,11 @@
+cp extracted/ntsc-1.1/assets/objects/object_bv/gBarinadeTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_bv/gBarinadeTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_fd/gVolvagiaTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_fd/gVolvagiaTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_fhg/gPhantomGanonTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_fhg/gPhantomGanonTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_ganon/gGanondorfTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_ganon/gGanondorfTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_ganon2/gGanonTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_ganon2/gGanonTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_goma/gGohmaTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_goma/gGohmaTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_kingdodongo/gKingDodongoTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_kingdodongo/gKingDodongoTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_mag/gTitleTitleJPNTex.i8.png extracted/ntsc-1.2/assets/objects/object_mag/gTitleTitleJPNTex.i8.png
+cp extracted/ntsc-1.1/assets/objects/object_mo/gMorphaTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_mo/gMorphaTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_sst/gBongoTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_sst/gBongoTitleCardTex.ia8.png
+cp extracted/ntsc-1.1/assets/objects/object_tw/gTwinrovaTitleCardTex.ia8.png extracted/ntsc-1.2/assets/objects/object_tw/gTwinrovaTitleCardTex.ia8.png
